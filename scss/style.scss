@@ -1,0 +1,251 @@
+@charset "utf-8";
+@import url('https://fonts.googleapis.com/css?family=Roboto+Condensed');
+@import url('https://fonts.googleapis.com/css?family=Work+Sans');
+
+
+$bgColor: rgba(125, 192, 170, .2);
+$myWhite: rgb(245, 245, 245);
+$myBlack: rgb(10, 10, 10);
+$myGray: rgb(155, 155, 155);
+$fontBody: 'Roboto Condensed', 'Work Sans', sans-serif;
+
+@mixin displays{
+	display: flex;
+	flex-direction: column;
+}
+
+@mixin paragraphConfig{
+	font-size: 1rem;
+	margin: 0 1rem;
+	text-align: justify;
+}
+
+html{
+	scroll-behavior: smooth;
+}
+
+*, *::before, *::after{
+	box-sizing: border-box;
+}
+
+body, * {
+	margin: 0px;
+	padding: 0px;
+}
+
+body{
+	font-family: $fontBody;
+
+	main{
+		position: relative;
+		max-width: 900px;
+		margin: auto;
+		box-shadow: -30px 0 40px $myGray,
+					30px 0 40px $myGray;
+
+		header{
+			@include displays;
+			height: 100vh;
+			justify-content: center;
+			z-index: 7;
+
+			#banner{
+				height: 100vh;
+				background: url(../images/arraial.jpg);
+				background-repeat: no-repeat;
+				background-position: center;
+				background-size: cover;
+
+				.header{
+					@include displays;
+					background-color: $bgColor;
+					height: 35px;
+					align-items: center;
+					z-index: 999;
+
+					.logo{
+						display: flex;
+						align-self: flex-end;
+						height: 35px;
+						z-index: 7;
+
+						&:hover{
+							cursor: pointer;
+						}
+
+						img{
+							padding: .3rem;
+							width: 35px;
+							height: 35px;
+						}
+					}
+
+					.nav-toggle{
+						display: none;
+					}
+
+					.nav-toggle:checked ~ nav{
+						transform: scale(1, 1);
+					}
+					
+					.nav-toggle-label{
+						@include displays;
+						position: absolute;
+						cursor: pointer;
+						align-self: flex-start;
+						top: .3rem;
+						height: 1.2rem;
+						margin-left: 0;
+
+						
+						.hamburger{
+							@include displays;
+							justify-content: space-around;
+							height: 2rem;
+							padding-left: .3rem;
+							z-index: 9;
+
+							.hamb-top, .hamb-mid{
+								height: 3px;
+								width: 2rem;
+								border-radius: 3px;
+								background-color: $myBlack;
+							}
+							
+							.hamb-bot{
+								height: 3px;
+								width: 2rem;
+								border-radius: 3px;
+								background-color: $myBlack;
+								width: 1.3rem;
+								transition: .15s ease-in;
+							}
+
+							&:hover .hamb-bot{
+								width: 2rem;
+							}
+						}
+					}
+
+					.oveRLay{
+						position: absolute;
+						height: 100vh;
+						width: 100%;
+						background-color: $myBlack;
+						opacity: .7;
+					}
+
+					h1{
+						margin: 7rem auto;
+						text-transform: capitalize;
+						color: $myWhite;
+						z-index: 6;
+						font-size: 1.5rem;
+						text-align: center;
+					}
+					
+					nav{
+						width: 100%;
+						align-self: flex-start;
+						transform: scale(1, 0);
+						transform-origin: top;
+						transition: transform .2s ease-in;
+						background-color: $bgColor;
+						z-index: 8;
+						top: 2.2rem;
+						position: absolute;
+						
+
+						ul{
+							@include displays;
+							align-items: flex-start;
+							list-style: none;
+							z-index: 5;
+							background-color: $bgColor;
+
+							li{
+								margin-left: .3rem;
+								padding: .2rem 0;
+
+								a{
+									text-decoration: none;
+									color: $myBlack;
+									text-transform: uppercase;
+								}
+
+								a:hover{
+									color: $myWhite;
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+.wrapper{
+	@include displays;
+	justify-content: center;
+	align-items: center;
+
+	h2{
+		font-size: 1.3rem;
+		padding: 1.5rem .5rem;
+		text-align: center;
+	}
+
+	.grid{
+		display: grid;
+		grid-gap: 5px;
+		grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+
+		img{
+			display: block;
+			width: 90%;
+			margin: .3rem auto;
+			text-align: center;
+		}
+
+		p{
+			@include paragraphConfig;
+		}
+	}
+
+	p{
+		@include paragraphConfig;
+	}
+}
+
+footer{
+	.mapa{
+		margin: 5rem auto 0px auto;
+		width: 100%;
+		max-width: 900px;
+
+		iframe{
+			width: 100%;
+			height: 250px;
+		}
+	}
+
+	#contato{
+		padding: 1.5rem 0;
+
+		p{
+			padding: .3rem;
+		}
+	}
+
+	#creditos{
+		display: flex;
+		justify-content: center;
+		align-items: center;
+
+		h3{
+			font-size: .8rem;
+			padding: 1.5rem 0;
+		}
+	}
+}

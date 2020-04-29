@@ -1,0 +1,207 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto+Condensed");
+@import url("https://fonts.googleapis.com/css?family=Work+Sans");
+html {
+  scroll-behavior: smooth;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+body, * {
+  margin: 0px;
+  padding: 0px;
+}
+
+body {
+  font-family: "Roboto Condensed", "Work Sans", sans-serif;
+}
+body main {
+  position: relative;
+  max-width: 900px;
+  margin: auto;
+  box-shadow: -30px 0 40px #9b9b9b, 30px 0 40px #9b9b9b;
+}
+body main header {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  justify-content: center;
+  z-index: 7;
+}
+body main header #banner {
+  height: 100vh;
+  background: url(../images/arraial.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+body main header #banner .header {
+  display: flex;
+  flex-direction: column;
+  background-color: rgba(125, 192, 170, 0.2);
+  height: 35px;
+  align-items: center;
+  z-index: 999;
+}
+body main header #banner .header .logo {
+  display: flex;
+  align-self: flex-end;
+  height: 35px;
+  z-index: 7;
+}
+body main header #banner .header .logo:hover {
+  cursor: pointer;
+}
+body main header #banner .header .logo img {
+  padding: 0.3rem;
+  width: 35px;
+  height: 35px;
+}
+body main header #banner .header .nav-toggle {
+  display: none;
+}
+body main header #banner .header .nav-toggle:checked ~ nav {
+  transform: scale(1, 1);
+}
+body main header #banner .header .nav-toggle-label {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  cursor: pointer;
+  align-self: flex-start;
+  top: 0.3rem;
+  height: 1.2rem;
+  margin-left: 0;
+}
+body main header #banner .header .nav-toggle-label .hamburger {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 2rem;
+  padding-left: 0.3rem;
+  z-index: 9;
+}
+body main header #banner .header .nav-toggle-label .hamburger .hamb-top, body main header #banner .header .nav-toggle-label .hamburger .hamb-mid {
+  height: 3px;
+  width: 2rem;
+  border-radius: 3px;
+  background-color: #0a0a0a;
+}
+body main header #banner .header .nav-toggle-label .hamburger .hamb-bot {
+  height: 3px;
+  width: 2rem;
+  border-radius: 3px;
+  background-color: #0a0a0a;
+  width: 1.3rem;
+  transition: 0.15s ease-in;
+}
+body main header #banner .header .nav-toggle-label .hamburger:hover .hamb-bot {
+  width: 2rem;
+}
+body main header #banner .header .oveRLay {
+  position: absolute;
+  height: 100vh;
+  width: 100%;
+  background-color: #0a0a0a;
+  opacity: 0.7;
+}
+body main header #banner .header h1 {
+  margin: 7rem auto;
+  text-transform: capitalize;
+  color: whitesmoke;
+  z-index: 6;
+  font-size: 1.5rem;
+  text-align: center;
+}
+body main header #banner .header nav {
+  width: 100%;
+  align-self: flex-start;
+  transform: scale(1, 0);
+  transform-origin: top;
+  transition: transform 0.2s ease-in;
+  background-color: rgba(125, 192, 170, 0.2);
+  z-index: 8;
+  top: 2.2rem;
+  position: absolute;
+}
+body main header #banner .header nav ul {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  list-style: none;
+  z-index: 5;
+  background-color: rgba(125, 192, 170, 0.2);
+}
+body main header #banner .header nav ul li {
+  margin-left: 0.3rem;
+  padding: 0.2rem 0;
+}
+body main header #banner .header nav ul li a {
+  text-decoration: none;
+  color: #0a0a0a;
+  text-transform: uppercase;
+}
+body main header #banner .header nav ul li a:hover {
+  color: whitesmoke;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.wrapper h2 {
+  font-size: 1.3rem;
+  padding: 1.5rem 0.5rem;
+  text-align: center;
+}
+.wrapper .grid {
+  display: grid;
+  grid-gap: 5px;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+.wrapper .grid img {
+  display: block;
+  width: 90%;
+  margin: 0.3rem auto;
+  text-align: center;
+}
+.wrapper .grid p {
+  font-size: 1rem;
+  margin: 0 1rem;
+  text-align: justify;
+}
+.wrapper p {
+  font-size: 1rem;
+  margin: 0 1rem;
+  text-align: justify;
+}
+
+footer .mapa {
+  margin: 5rem auto 0px auto;
+  width: 100%;
+  max-width: 900px;
+}
+footer .mapa iframe {
+  width: 100%;
+  height: 250px;
+}
+footer #contato {
+  padding: 1.5rem 0;
+}
+footer #contato p {
+  padding: 0.3rem;
+}
+footer #creditos {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+footer #creditos h3 {
+  font-size: 0.8rem;
+  padding: 1.5rem 0;
+}
+
+/*# sourceMappingURL=style.css.map */
